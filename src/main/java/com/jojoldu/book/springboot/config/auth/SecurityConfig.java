@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @RequiredArgsConstructor
 @EnableWebSecurity
-public class securityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final CustomOAuth2UserService customOAuth2UserService;
 
@@ -23,5 +23,4 @@ public class securityConfig extends WebSecurityConfigurerAdapter {
                 .logout().logoutSuccessUrl("/").and()
                 .oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
     }
-
 }
